@@ -168,24 +168,20 @@
                       </Group>
                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="lblImagenPeli" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Component id="lblDuracionPeli" pref="88" max="32767" attributes="0"/>
-                              </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="lblDuracionPeli" pref="88" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="lblNombrePeli" min="-2" pref="82" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblNombrePeli" min="-2" pref="82" max="-2" attributes="0"/>
+                                  <Component id="lblImagen" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="tfImagenPeli" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="tfNombrePeli" alignment="1" min="-2" pref="177" max="-2" attributes="0"/>
                               <Component id="tfDuracionPeli" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
                           </Group>
@@ -193,6 +189,7 @@
                               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                               <Component id="btnGuardarPeli" min="-2" pref="105" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="btnImagen" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   </Group>
@@ -211,7 +208,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace pref="17" max="32767" attributes="0"/>
+                      <EmptySpace pref="56" max="32767" attributes="0"/>
                       <Component id="lblEditarPersona1" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
@@ -238,19 +235,27 @@
                                   <Component id="tfDuracionPeli" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblClasificacion" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblGeneroPeli" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="cbGeneroPeli" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="tfImagenPeli" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblImagenPeli" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="lblGeneroPeli" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                                          <Component id="cbGeneroPeli" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="lblIdiomaPeli" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="cbIdiomaPeli" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="btnImagen" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lblImagen" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblIdiomaPeli" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cbIdiomaPeli" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace pref="58" max="32767" attributes="0"/>
+                              <EmptySpace pref="49" max="32767" attributes="0"/>
                               <Component id="btnGuardarPeli" min="-2" pref="37" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -311,23 +316,10 @@
                 <Property name="text" type="java.lang.String" value="G&#xe9;nero:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfImagenPeli">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfImagenPeliActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JTextField" name="tfDuracionPeli">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfDuracionPeliActionPerformed"/>
               </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="lblImagenPeli">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\joab9\Desktop\CETI\3er semestre\tercer parcial\POE\imagenes\imagenPeli.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Imagen:"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblCodigoPeli">
               <Properties>
@@ -410,7 +402,7 @@
                         <Column editable="false" title="Clasificaci&#xf3;n" type="java.lang.String"/>
                         <Column editable="false" title="Duraci&#xf3;n" type="java.lang.Integer"/>
                         <Column editable="false" title="G&#xe9;nero" type="java.lang.String"/>
-                        <Column editable="false" title="Imagen" type="java.lang.Object"/>
+                        <Column editable="false" title="Imagen" type="java.lang.Byte"/>
                         <Column editable="false" title="Idioma" type="java.lang.Object"/>
                       </Table>
                     </Property>
@@ -452,6 +444,21 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarPeliActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnImagen">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="seleccionar imagen"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnImagenActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblImagen">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="C:\Users\joab9\Desktop\CETI\3er semestre\tercer parcial\POE\imagenes\imagenPeli.png"/>
+                </Property>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
