@@ -29,6 +29,7 @@ public class VntMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         bntCerrarSesion = new javax.swing.JButton();
@@ -74,13 +75,14 @@ public class VntMenu extends javax.swing.JFrame {
         btnEditarFuncion = new javax.swing.JButton();
         btnEliminarFuncion = new javax.swing.JButton();
 
+        jButton1.setText("jButton1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 102));
 
         jLabel1.setFont(new java.awt.Font("Dubai Light", 0, 30)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\imagenes\\CINEDL64.png")); // NOI18N
         jLabel1.setText("CINEDL");
 
         bntCerrarSesion.setText("Cerrar Sesión");
@@ -115,18 +117,14 @@ public class VntMenu extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        lblDuracionPeli.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\imagenes\\DuracionPeli.png")); // NOI18N
         lblDuracionPeli.setText("Duración:");
 
         cbGeneroPeli.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "suspenso", "acción", "drama", "terror", "comedia", " " }));
 
-        lblIdiomaPeli.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\imagenes\\IdiomaPeli.png")); // NOI18N
         lblIdiomaPeli.setText("Idioma:");
 
-        lblClasificacion.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\imagenes\\ClasifiacionPelis.png")); // NOI18N
         lblClasificacion.setText("Clasificación:");
 
-        lblGeneroPeli.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\imagenes\\GeneroPeili.png")); // NOI18N
         lblGeneroPeli.setText("Género:");
 
         tfDuracionPeli.addActionListener(new java.awt.event.ActionListener() {
@@ -135,7 +133,6 @@ public class VntMenu extends javax.swing.JFrame {
             }
         });
 
-        lblCodigoPeli.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\imagenes\\CodigoPelis.png")); // NOI18N
         lblCodigoPeli.setText("Código");
 
         tfCodigoPeli.addActionListener(new java.awt.event.ActionListener() {
@@ -160,7 +157,6 @@ public class VntMenu extends javax.swing.JFrame {
             }
         });
 
-        lblNombrePeli.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\imagenes\\Cinema.png")); // NOI18N
         lblNombrePeli.setText("Nombre");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -196,7 +192,6 @@ public class VntMenu extends javax.swing.JFrame {
         });
 
         lblEditarPersona1.setFont(new java.awt.Font("Segoe UI Light", 0, 25)); // NOI18N
-        lblEditarPersona1.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\Pelicula.png")); // NOI18N
         lblEditarPersona1.setText("Crear Película");
 
         bntBuscarPeli.setText("Buscar");
@@ -219,8 +214,6 @@ public class VntMenu extends javax.swing.JFrame {
                 btnImagenActionPerformed(evt);
             }
         });
-
-        lblImagen.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\imagenes\\imagenPeli.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -323,9 +316,9 @@ public class VntMenu extends javax.swing.JFrame {
                                     .addComponent(cbIdiomaPeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnImagen)
-                                    .addComponent(lblImagen))))
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblImagen)
+                                    .addComponent(btnImagen))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                         .addComponent(btnGuardarPeli, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
@@ -339,13 +332,10 @@ public class VntMenu extends javax.swing.JFrame {
 
         cbNumeroSala.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
 
-        lblTipoSala.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\imagenes\\tipoSala.png")); // NOI18N
         lblTipoSala.setText("Tipo de Sala");
 
-        lblNumeroSala.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\imagenes\\sala.png")); // NOI18N
         lblNumeroSala.setText("Número de sala:");
 
-        lblHoraFuncion.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\imagenes\\hora.png")); // NOI18N
         lblHoraFuncion.setText("Hora:");
 
         tfHoraFuncion.addActionListener(new java.awt.event.ActionListener() {
@@ -367,14 +357,11 @@ public class VntMenu extends javax.swing.JFrame {
             }
         });
 
-        lblNombreFuncion.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\imagenes\\CodigoPelis.png")); // NOI18N
         lblNombreFuncion.setText("Código Película:");
 
-        lblCapacidadFuncion.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\imagenes\\silla.png")); // NOI18N
         lblCapacidadFuncion.setText("Capacidad:");
 
         lblEditarPersona.setFont(new java.awt.Font("Segoe UI Light", 0, 25)); // NOI18N
-        lblEditarPersona.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\imagenes\\Funcion.png")); // NOI18N
         lblEditarPersona.setText("Crear Función");
 
         cbTipoSala.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tradicional", "3D", "4D", "Macro XE", "VIP", "Infantil" }));
@@ -624,6 +611,7 @@ public class VntMenu extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbIdiomaPeli;
     private javax.swing.JComboBox<String> cbNumeroSala;
     private javax.swing.JComboBox<String> cbTipoSala;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

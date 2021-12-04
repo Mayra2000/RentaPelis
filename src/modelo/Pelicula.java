@@ -1,20 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package modelo;
 
-/**
- *
- * @author DavVF
- */
+
 public class Pelicula {
     
     private String Codigo;
     private String Nombre;
     private String Duracion;
+    private String Clasificacion;
     private String Genero;
     private String Idioma;
+
+    public String getClasificacion() {
+        return Clasificacion;
+    }
+
+    public void setClasificacion(String Clasificacion) {
+        this.Clasificacion = Clasificacion;
+    }
 
     public String getCodigo() {
         return Codigo;
