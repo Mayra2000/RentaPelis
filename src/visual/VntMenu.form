@@ -155,7 +155,7 @@
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Group type="102" attributes="0">
                                           <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                                          <Component id="bntEditarPeli" min="-2" max="-2" attributes="0"/>
+                                          <Component id="bntmostrarPeli" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="lblGeneroPeli" max="32767" attributes="0"/>
                                   </Group>
@@ -173,7 +173,7 @@
                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="lblDuracionPeli" pref="88" max="32767" attributes="0"/>
+                              <Component id="lblDuracionPeli" pref="80" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
@@ -193,32 +193,35 @@
                               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                               <Component id="btnGuardarPeli" min="-2" pref="105" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="btnImagen" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="273" max="-2" attributes="0"/>
-                      <Component id="lblEditarPersona1" min="-2" pref="200" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="629" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jScrollPane1" min="-2" pref="629" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="lblEditarPersona1" min="-2" pref="200" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="254" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace pref="56" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                       <Component id="lblEditarPersona1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="53" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="bntEditarPeli" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="bntmostrarPeli" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="btnEliminarPeli" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -253,13 +256,10 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lblImagen" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btnImagen" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="lblImagen" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="49" max="32767" attributes="0"/>
+                              <EmptySpace pref="66" max="32767" attributes="0"/>
                               <Component id="btnGuardarPeli" min="-2" pref="37" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -367,7 +367,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblNombrePeli">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Nombre"/>
+                <Property name="text" type="java.lang.String" value="Nombre:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="tfNombrePeli">
@@ -396,12 +396,12 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JButton" name="bntEditarPeli">
+            <Component class="javax.swing.JButton" name="bntmostrarPeli">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Editar"/>
+                <Property name="text" type="java.lang.String" value="Mostrar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntEditarPeliActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntmostrarPeliActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblEditarPersona1">
@@ -409,7 +409,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Light" size="25" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Crear Pel&#xed;cula"/>
+                <Property name="text" type="java.lang.String" value="Agregar Pel&#xed;cula"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="bntBuscarPeli">
@@ -426,14 +426,6 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarPeliActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnImagen">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="seleccionar imagen"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnImagenActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblImagen">
@@ -495,7 +487,7 @@
                                       </Group>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Component id="btnEditarFuncion" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnMostarfun" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                       <Component id="btnEliminarFuncion" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
@@ -558,7 +550,7 @@
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnGuardarFuncion" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
-                          <Component id="btnEditarFuncion" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnMostarfun" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnEliminarFuncion" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
@@ -625,7 +617,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblNombreFuncion">
               <Properties>
-                <Property name="text" type="java.lang.String" value="C&#xf3;digo Pel&#xed;cula:"/>
+                <Property name="text" type="java.lang.String" value="C&#xf3;digo Funcion"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblCapacidadFuncion">
@@ -690,15 +682,21 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarFuncionActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnEditarFuncion">
+            <Component class="javax.swing.JButton" name="btnMostarfun">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Editar"/>
+                <Property name="text" type="java.lang.String" value="Mostrar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMostarfunActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnEliminarFuncion">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Eliminar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarFuncionActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

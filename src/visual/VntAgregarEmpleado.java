@@ -5,16 +5,27 @@
  */
 package visual;
 
-/**
- *
- * @author joab9
- */
+import controlador.PersonaBD;
+import javax.swing.JOptionPane;
+import modelo.Persona;
+
+
 public class VntAgregarEmpleado extends javax.swing.JFrame {
 
-    /**
-     * Creates new form VntPersona
-     */
+    Persona objPersona = null;
+    Principal objPrin = null;
+    PersonaBD perBD = new PersonaBD();
+    
     public VntAgregarEmpleado() {
+        initComponents();
+    }
+    
+    
+    
+    public VntAgregarEmpleado(Persona objPersona, Principal objPrin){
+        
+        this.objPersona = objPersona;
+        this.objPrin = objPrin;
         initComponents();
     }
 
@@ -34,12 +45,12 @@ public class VntAgregarEmpleado extends javax.swing.JFrame {
         lblNombreEmpleado = new javax.swing.JLabel();
         lblPasswordEmpleado = new javax.swing.JLabel();
         lblEdadEmpleado = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        txtNumEmp = new javax.swing.JTextField();
+        txtnNomEmp = new javax.swing.JTextField();
+        txtcontEmp = new javax.swing.JTextField();
+        txtEdadEmp = new javax.swing.JTextField();
         btnConfirmarPersona = new javax.swing.JButton();
-        btnVolverPeli = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -50,7 +61,6 @@ public class VntAgregarEmpleado extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         lblAgregarEmpleado.setFont(new java.awt.Font("Segoe UI Light", 0, 17)); // NOI18N
-        lblAgregarEmpleado.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\Editar.png")); // NOI18N
         lblAgregarEmpleado.setText("Agregar Empleado");
 
         lblIDEmpleado.setText("Número empleado:");
@@ -61,21 +71,21 @@ public class VntAgregarEmpleado extends javax.swing.JFrame {
 
         lblEdadEmpleado.setText("Edad Empleado:");
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        txtnNomEmp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                txtnNomEmpActionPerformed(evt);
             }
         });
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        txtcontEmp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                txtcontEmpActionPerformed(evt);
             }
         });
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        txtEdadEmp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                txtEdadEmpActionPerformed(evt);
             }
         });
 
@@ -86,13 +96,13 @@ public class VntAgregarEmpleado extends javax.swing.JFrame {
             }
         });
 
-        btnVolverPeli.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\Back.png")); // NOI18N
-        btnVolverPeli.setMaximumSize(new java.awt.Dimension(30, 30));
-        btnVolverPeli.setMinimumSize(new java.awt.Dimension(30, 30));
-        btnVolverPeli.setPreferredSize(new java.awt.Dimension(99, 41));
-        btnVolverPeli.addActionListener(new java.awt.event.ActionListener() {
+        btnVolver.setText("Regresar");
+        btnVolver.setMaximumSize(new java.awt.Dimension(30, 30));
+        btnVolver.setMinimumSize(new java.awt.Dimension(30, 30));
+        btnVolver.setPreferredSize(new java.awt.Dimension(99, 41));
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVolverPeliActionPerformed(evt);
+                btnVolverActionPerformed(evt);
             }
         });
 
@@ -109,23 +119,23 @@ public class VntAgregarEmpleado extends javax.swing.JFrame {
                     .addComponent(lblIDEmpleado))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEdadEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jTextField3)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtnNomEmp)
+                        .addComponent(txtcontEmp, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtNumEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(37, 37, 37))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(105, 105, 105)
                         .addComponent(btnConfirmarPersona, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(98, 98, 98)
-                        .addComponent(btnVolverPeli, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(77, 77, 77)
+                        .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(130, 130, 130)
                         .addComponent(lblAgregarEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,23 +145,23 @@ public class VntAgregarEmpleado extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblIDEmpleado)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNumEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNombreEmpleado)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtnNomEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPasswordEmpleado)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtcontEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEdadEmpleado)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtEdadEmp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnConfirmarPersona, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnVolverPeli, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnConfirmarPersona, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                    .addComponent(btnVolver, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -159,7 +169,6 @@ public class VntAgregarEmpleado extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Dubai Light", 0, 30)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\imagenes\\CINEDL64.png")); // NOI18N
         jLabel2.setText("CINEDL");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -197,29 +206,56 @@ public class VntAgregarEmpleado extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void txtEdadEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEdadEmpActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_txtEdadEmpActionPerformed
 
     private void btnConfirmarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarPersonaActionPerformed
-        // TODO add your handling code here:
+
+        objPersona.setNumEmpleado(Integer.parseInt(txtNumEmp.getText()));
+        objPersona.setContrasenia(txtcontEmp.getText());
+        objPersona.setNombreEmp(txtnNomEmp.getText());
+        objPersona.setEdad(Integer.parseInt(txtEdadEmp.getText()));
+        
+        
+        perBD.abrir();
+        perBD.insertarRegistro(objPersona);
+        perBD.cerrar();
+        
+        JOptionPane.showMessageDialog(this, "El empleado se registró de forma correcta");
+
+        limpiarCampos();
     }//GEN-LAST:event_btnConfirmarPersonaActionPerformed
 
-    private void btnVolverPeliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverPeliActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnVolverPeliActionPerformed
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+        limpiarCampos();
+        objPrin.setVisible(true);
+        this.setVisible(false);
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_btnVolverActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {                                   
+        limpiarCampos();
+        objPrin.setVisible(true);
+    } 
+    
+    private void txtcontEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcontEmpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcontEmpActionPerformed
+
+    private void txtnNomEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnNomEmpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnNomEmpActionPerformed
+
+    public void limpiarCampos(){
+        
+        txtNumEmp.setText("");
+        txtcontEmp.setText("");
+        txtnNomEmp.setText("");
+        txtEdadEmp.setText("");
+        
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -257,19 +293,19 @@ public class VntAgregarEmpleado extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConfirmarPersona;
-    private javax.swing.JButton btnVolverPeli;
+    private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JLabel lblAgregarEmpleado;
     private javax.swing.JLabel lblEdadEmpleado;
     private javax.swing.JLabel lblIDEmpleado;
     private javax.swing.JLabel lblNombreEmpleado;
     private javax.swing.JLabel lblPasswordEmpleado;
+    private javax.swing.JTextField txtEdadEmp;
+    private javax.swing.JTextField txtNumEmp;
+    private javax.swing.JTextField txtcontEmp;
+    private javax.swing.JTextField txtnNomEmp;
     // End of variables declaration//GEN-END:variables
 }

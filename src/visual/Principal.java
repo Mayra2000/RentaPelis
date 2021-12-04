@@ -11,10 +11,8 @@ package visual;
  */
 public class Principal extends javax.swing.JFrame {
 
-    /*
-    
-    
-     */
+    Principal objPrin = null;
+    VntAgregarEmpleado objEmp = null; 
     VntMenu objVntMenu = null; 
     
     public Principal() {
@@ -61,14 +59,12 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(51, 255, 204));
         jLabel1.setFont(new java.awt.Font("Segoe UI Light", 0, 11)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\employee.png")); // NOI18N
         jLabel1.setText("Iniciar Sesión Como Empleado");
 
         lblUsuario.setText("ID de Usuario:");
 
         lblPassword.setText("Contraseña:");
 
-        passwordFieldPassword.setText("jPasswordField1");
         passwordFieldPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordFieldPasswordActionPerformed(evt);
@@ -133,7 +129,6 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Dubai Light", 0, 30)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\imagenes\\CINEDL64.png")); // NOI18N
         jLabel2.setText("CINEDL");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
