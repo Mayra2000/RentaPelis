@@ -10,6 +10,7 @@ package visual;
  * @author joab9
  */
 
+
 public class VntMenu extends javax.swing.JFrame {
 
     /**
@@ -38,9 +39,7 @@ public class VntMenu extends javax.swing.JFrame {
         lblIdiomaPeli = new javax.swing.JLabel();
         lblClasificacion = new javax.swing.JLabel();
         lblGeneroPeli = new javax.swing.JLabel();
-        tfImagenPeli = new javax.swing.JTextField();
         tfDuracionPeli = new javax.swing.JTextField();
-        lblImagenPeli = new javax.swing.JLabel();
         lblCodigoPeli = new javax.swing.JLabel();
         tfCodigoPeli = new javax.swing.JTextField();
         cbClasificacion = new javax.swing.JComboBox<>();
@@ -54,6 +53,8 @@ public class VntMenu extends javax.swing.JFrame {
         lblEditarPersona1 = new javax.swing.JLabel();
         bntBuscarPeli = new javax.swing.JButton();
         btnEliminarPeli = new javax.swing.JButton();
+        btnImagen = new javax.swing.JButton();
+        lblImagen = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         cbNumeroSala = new javax.swing.JComboBox<>();
         lblTipoSala = new javax.swing.JLabel();
@@ -128,20 +129,11 @@ public class VntMenu extends javax.swing.JFrame {
         lblGeneroPeli.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\imagenes\\GeneroPeili.png")); // NOI18N
         lblGeneroPeli.setText("Género:");
 
-        tfImagenPeli.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfImagenPeliActionPerformed(evt);
-            }
-        });
-
         tfDuracionPeli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfDuracionPeliActionPerformed(evt);
             }
         });
-
-        lblImagenPeli.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\imagenes\\imagenPeli.png")); // NOI18N
-        lblImagenPeli.setText("Imagen:");
 
         lblCodigoPeli.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\imagenes\\CodigoPelis.png")); // NOI18N
         lblCodigoPeli.setText("Código");
@@ -180,7 +172,7 @@ public class VntMenu extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Byte.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false, false
@@ -221,6 +213,15 @@ public class VntMenu extends javax.swing.JFrame {
             }
         });
 
+        btnImagen.setText("seleccionar imagen");
+        btnImagen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImagenActionPerformed(evt);
+            }
+        });
+
+        lblImagen.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\imagenes\\imagenPeli.png")); // NOI18N
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -260,24 +261,22 @@ public class VntMenu extends javax.swing.JFrame {
                                     .addGap(52, 52, 52))))))
                 .addGap(52, 52, 52)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(lblImagenPeli)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(lblDuracionPeli, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(lblDuracionPeli, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
                         .addGap(95, 95, 95))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(lblNombrePeli, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblNombrePeli, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblImagen))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(tfImagenPeli)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(tfNombrePeli, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(tfDuracionPeli, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(8, 8, 8)
-                        .addComponent(btnGuardarPeli, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnGuardarPeli, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnImagen))
                 .addGap(22, 22, 22))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(273, 273, 273)
@@ -291,7 +290,7 @@ public class VntMenu extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+                .addContainerGap(56, Short.MAX_VALUE)
                 .addComponent(lblEditarPersona1)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -313,17 +312,21 @@ public class VntMenu extends javax.swing.JFrame {
                             .addComponent(lblDuracionPeli)
                             .addComponent(tfDuracionPeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblClasificacion))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblGeneroPeli, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbGeneroPeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfImagenPeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblImagenPeli))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblIdiomaPeli)
-                            .addComponent(cbIdiomaPeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblGeneroPeli, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbGeneroPeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblIdiomaPeli)
+                                    .addComponent(cbIdiomaPeli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(btnImagen)
+                                    .addComponent(lblImagen))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                         .addComponent(btnGuardarPeli, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -515,10 +518,6 @@ public class VntMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tfImagenPeliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfImagenPeliActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfImagenPeliActionPerformed
-
     private void tfDuracionPeliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfDuracionPeliActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfDuracionPeliActionPerformed
@@ -569,6 +568,10 @@ public class VntMenu extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_bntCerrarSesionActionPerformed
 
+    private void btnImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImagenActionPerformed
+ 
+    }//GEN-LAST:event_btnImagenActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -615,6 +618,7 @@ public class VntMenu extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminarPeli;
     private javax.swing.JButton btnGuardarFuncion;
     private javax.swing.JButton btnGuardarPeli;
+    private javax.swing.JButton btnImagen;
     private javax.swing.JComboBox<String> cbClasificacion;
     private javax.swing.JComboBox<String> cbGeneroPeli;
     private javax.swing.JComboBox<String> cbIdiomaPeli;
@@ -638,7 +642,7 @@ public class VntMenu extends javax.swing.JFrame {
     private javax.swing.JLabel lblGeneroPeli;
     private javax.swing.JLabel lblHoraFuncion;
     private javax.swing.JLabel lblIdiomaPeli;
-    private javax.swing.JLabel lblImagenPeli;
+    private javax.swing.JLabel lblImagen;
     private javax.swing.JLabel lblNombreFuncion;
     private javax.swing.JLabel lblNombrePeli;
     private javax.swing.JLabel lblNumeroSala;
@@ -647,7 +651,6 @@ public class VntMenu extends javax.swing.JFrame {
     private javax.swing.JTextField tfCodigoPeli;
     private javax.swing.JTextField tfDuracionPeli;
     private javax.swing.JTextField tfHoraFuncion;
-    private javax.swing.JTextField tfImagenPeli;
     private javax.swing.JTextField tfNombreFuncion;
     private javax.swing.JTextField tfNombrePeli;
     // End of variables declaration//GEN-END:variables
