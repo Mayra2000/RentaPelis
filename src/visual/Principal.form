@@ -126,6 +126,12 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Light" size="11" style="0"/>
             </Property>
+<<<<<<< HEAD
+=======
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\joab9\Desktop\CETI\3er semestre\tercer parcial\POE\proyectoPOE\RentaPelis\src\imagenes proyecto\employee.png"/>
+            </Property>
+>>>>>>> f7b96602d6461df51971a340b6765c4ec8f6f639
             <Property name="text" type="java.lang.String" value="Iniciar Sesi&#xf3;n Como Empleado"/>
           </Properties>
         </Component>
