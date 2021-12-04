@@ -61,7 +61,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(51, 255, 204));
         jLabel1.setFont(new java.awt.Font("Segoe UI Light", 0, 11)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\employee.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\proyectoPOE\\RentaPelis\\src\\imagenes proyecto\\employee.png")); // NOI18N
         jLabel1.setText("Iniciar Sesión Como Empleado");
 
         lblUsuario.setText("ID de Usuario:");

@@ -273,6 +273,9 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="lblDuracionPeli">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="C:\Users\joab9\Desktop\CETI\3er semestre\tercer parcial\POE\proyectoPOE\RentaPelis\src\imagenes proyecto\DuracionPeli.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Duraci&#xf3;n:"/>
               </Properties>
             </Component>
@@ -295,16 +298,25 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblIdiomaPeli">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="C:\Users\joab9\Desktop\CETI\3er semestre\tercer parcial\POE\proyectoPOE\RentaPelis\src\imagenes proyecto\IdiomaPeli.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Idioma:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblClasificacion">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="C:\Users\joab9\Desktop\CETI\3er semestre\tercer parcial\POE\proyectoPOE\RentaPelis\src\imagenes proyecto\ClasifiacionPelis.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Clasificaci&#xf3;n:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblGeneroPeli">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="C:\Users\joab9\Desktop\CETI\3er semestre\tercer parcial\POE\proyectoPOE\RentaPelis\src\imagenes proyecto\GeneroPeili.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="G&#xe9;nero:"/>
               </Properties>
             </Component>
@@ -315,6 +327,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblCodigoPeli">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="C:\Users\joab9\Desktop\CETI\3er semestre\tercer parcial\POE\proyectoPOE\RentaPelis\src\imagenes proyecto\CodigoPelis.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="C&#xf3;digo"/>
               </Properties>
             </Component>
@@ -430,6 +445,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnImagen">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="2" name="C:\Users\joab9\Desktop\CETI\3er semestre\tercer parcial\POE\proyectoPOE\RentaPelis\src\imagenes proyecto\imagenPeli.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="seleccionar imagen"/>
               </Properties>
               <Events>

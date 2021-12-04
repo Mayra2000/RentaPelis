@@ -117,14 +117,18 @@ public class VntMenu extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
+        lblDuracionPeli.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\proyectoPOE\\RentaPelis\\src\\imagenes proyecto\\DuracionPeli.png")); // NOI18N
         lblDuracionPeli.setText("Duración:");
 
         cbGeneroPeli.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "suspenso", "acción", "drama", "terror", "comedia", " " }));
 
+        lblIdiomaPeli.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\proyectoPOE\\RentaPelis\\src\\imagenes proyecto\\IdiomaPeli.png")); // NOI18N
         lblIdiomaPeli.setText("Idioma:");
 
+        lblClasificacion.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\proyectoPOE\\RentaPelis\\src\\imagenes proyecto\\ClasifiacionPelis.png")); // NOI18N
         lblClasificacion.setText("Clasificación:");
 
+        lblGeneroPeli.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\proyectoPOE\\RentaPelis\\src\\imagenes proyecto\\GeneroPeili.png")); // NOI18N
         lblGeneroPeli.setText("Género:");
 
         tfDuracionPeli.addActionListener(new java.awt.event.ActionListener() {
@@ -133,6 +137,7 @@ public class VntMenu extends javax.swing.JFrame {
             }
         });
 
+        lblCodigoPeli.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\proyectoPOE\\RentaPelis\\src\\imagenes proyecto\\CodigoPelis.png")); // NOI18N
         lblCodigoPeli.setText("Código");
 
         tfCodigoPeli.addActionListener(new java.awt.event.ActionListener() {
@@ -208,6 +213,7 @@ public class VntMenu extends javax.swing.JFrame {
             }
         });
 
+        btnImagen.setIcon(new javax.swing.ImageIcon("C:\\Users\\joab9\\Desktop\\CETI\\3er semestre\\tercer parcial\\POE\\proyectoPOE\\RentaPelis\\src\\imagenes proyecto\\imagenPeli.png")); // NOI18N
         btnImagen.setText("seleccionar imagen");
         btnImagen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
