@@ -1,12 +1,15 @@
 
 package controlador;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import modelo.Pelicula;
 
 public class PeliculaBD {
     
     Connection conexion;
     PreparedStatement stInsertar; 
+    PreparedStatement stConsultaTab;
     PreparedStatement stConsulta;
     PreparedStatement stActualizar;
     PreparedStatement stEliminar;
@@ -23,13 +26,9 @@ public class PeliculaBD {
     public void abrir(){
         try{
             conexion = DriverManager.getConnection("jdbc:mysql://localhost/peliculas?serverTimezone=GMT-5", "root","");
-            stInsertar = conexion.prepareStatement("INSERT INTO Pelicula VALUES (?,?,?,?,?,?)");
-            stConsulta = conexion.prepareStatement("SELECT * FROM Pelicula WHERE Codigo=?");
-            stActualizar = conexion.prepareStatement("UPDATE Pelicula set Nombre=?, Duracion=?, Clasificacion=?, Genero=?, Idioma=? WHERE Codigo=?");
-            stEliminar = conexion.prepareStatement("DELETE FROM Pelicula WHERE Codigo=?");
-        
+            stConsultaTab = conexion.prepareStatement("SELECT * FROM Pelicula");
         }catch(SQLException ex){
-            System.out.println("Error en abrir la base de datos");
+            System.out.println("Error en abrir");
             System.out.println(ex.getMessage());
         }
     }
@@ -107,6 +106,17 @@ public class PeliculaBD {
             System.out.println("Error en eliminar");
             System.out.println(ex.getMessage());
         }
+    }
+    
+    public ResultSet informacionTabla(){
+        ResultSet rs = null;
+        try {     
+            rs = stConsultaTab.executeQuery();
+        } catch (SQLException ex) {
+            System.out.println("Error en colsulta la tabla de peliculas");
+            System.out.println(ex.getMessage());
+        }
         
+        return rs;
     }
 }

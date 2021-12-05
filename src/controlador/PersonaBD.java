@@ -23,11 +23,6 @@ public class PersonaBD{
     public void abrir(){
         try{
             conexion = DriverManager.getConnection("jdbc:mysql://localhost/peliculas?serverTimezone=GMT-5", "root","");
-            stInsertar = conexion.prepareStatement("INSERT INTO Persona VALUES (?,?,?,?)");
-            stConsulta = conexion.prepareStatement("SELECT * FROM Persona WHERE NumEmpleado=?");
-            stActualizar = conexion.prepareStatement("UPDATE Persona set Contrasenia=?, NombreEmp=?, Edad=? WHERE NumEmpleado=?");
-            stEliminar = conexion.prepareStatement("DELETE FROM Persona WHERE NumEmpleado=?");
-        
         }catch(SQLException ex){
             System.out.println("Error en abrir");
             System.out.println(ex.getMessage());
@@ -101,6 +96,6 @@ public class PersonaBD{
         }catch(SQLException ex){
             System.out.println("Error en eliminar");
             System.out.println(ex.getMessage());
-        }   
+        }
     }
 }

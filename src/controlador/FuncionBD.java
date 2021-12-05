@@ -2,7 +2,6 @@
 package controlador;
 import java.sql.*;
 import modelo.Funcion;
-
 public class FuncionBD {
     
     Connection conexion;
@@ -23,11 +22,6 @@ public class FuncionBD {
     public void abrir(){
         try{
             conexion = DriverManager.getConnection("jdbc:mysql://localhost/peliculas?serverTimezone=GMT-5", "root","");
-            stInsertar = conexion.prepareStatement("INSERT INTO Funcion VALUES (?,?,?,?,?)");
-            stConsulta = conexion.prepareStatement("SELECT * FROM Funcion WHERE CodigoPelicula=?");
-            stActualizar = conexion.prepareStatement("UPDATE Funcion set Hora=?, Capacidad=?, NumeroDeSala=?, TipoDeSala=? WHERE CodigoPelicula=?");
-            stEliminar = conexion.prepareStatement("DELETE FROM Funcion WHERE CodigoPelicula=?");
-        
         }catch(SQLException ex){
             System.out.println("Error en abrir");
             System.out.println(ex.getMessage());
