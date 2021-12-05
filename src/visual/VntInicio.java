@@ -147,13 +147,13 @@ public class VntInicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mnRegistroPeliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnRegistroPeliculasActionPerformed
-        if (objRegistro == null)
-            objRegistro = new Vnt(this, objAl);
+        /*if (objRegistro == null)
+            objRegistro = new VtnRegistro(this, objRegistro);
         
         objVntAl.setVisible(true);
         
         //Ocultar la ventana Principal
-        this.setVisible(false);
+        this.setVisible(false);*/
     }//GEN-LAST:event_mnRegistroPeliculasActionPerformed
 
     private void mnRegistroEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnRegistroEmpleadoActionPerformed
