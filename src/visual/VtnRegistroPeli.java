@@ -4,19 +4,31 @@
  */
 package visual;
 
-/**
- *
- * @author jesusd
- */
+import controlador.PeliculaBD;
+import controlador.FuncionBD;
+import javax.swing.JOptionPane;
+import modelo.Pelicula;
+import modelo.Funcion;
+
 public class VtnRegistroPeli extends javax.swing.JFrame {
 
-    /**
-     * Creates new form VtnRegistroPeli
-     */
+    Pelicula objPeli = null;
+    Funcion objFuncion = null; 
+    Principal objPrin = null;
+    PeliculaBD pelBD =  new PeliculaBD();
+    FuncionBD funBD = new FuncionBD();
+    
     public VtnRegistroPeli() {
         initComponents();
     }
 
+     public VtnRegistroPeli (Pelicula objPeli, Funcion objFuncion, Principal objPrin){
+        
+        this.objPeli = objPeli;
+        this.objFuncion = objFuncion;
+        this.objPrin = objPrin;
+        initComponents();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,6 +59,9 @@ public class VtnRegistroPeli extends javax.swing.JFrame {
         rdbIngles = new javax.swing.JRadioButton();
         rdbFrances = new javax.swing.JRadioButton();
         rdbPortugues = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
+        txtcodbus = new javax.swing.JTextField();
+        btnbuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Registros");
@@ -68,6 +83,11 @@ public class VtnRegistroPeli extends javax.swing.JFrame {
         lbClasificacion.setText("Clasificaion:");
 
         comboxClasificacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE", "AA", "A", "B", "B15", "C", "D" }));
+        comboxClasificacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboxClasificacionActionPerformed(evt);
+            }
+        });
 
         lbGenero.setText("Genero:");
 
@@ -76,10 +96,25 @@ public class VtnRegistroPeli extends javax.swing.JFrame {
         lbIdioma.setText("Idioma:");
 
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         btnRegresar.setText("Regresar");
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
 
         btngIdioma.add(rdbEspañol);
         rdbEspañol.setText("Español");
@@ -89,9 +124,29 @@ public class VtnRegistroPeli extends javax.swing.JFrame {
 
         btngIdioma.add(rdbFrances);
         rdbFrances.setText("Frances");
+        rdbFrances.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbFrancesActionPerformed(evt);
+            }
+        });
 
         btngIdioma.add(rdbPortugues);
         rdbPortugues.setText("Portugues");
+
+        jLabel1.setText("Buscar Pelicula");
+
+        txtcodbus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcodbusActionPerformed(evt);
+            }
+        });
+
+        btnbuscar.setText("Buscar");
+        btnbuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnbuscarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -120,28 +175,37 @@ public class VtnRegistroPeli extends javax.swing.JFrame {
                         .addComponent(lbIdioma)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rdbPortugues)
                     .addComponent(rdbFrances)
+                    .addComponent(rdbPortugues)
                     .addComponent(rdbIngles)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(rdbEspañol)
-                        .addGap(220, 220, 220)
-                        .addComponent(btnEliminar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnGuardar))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtDuracion)
                             .addComponent(txtCodigo)
                             .addComponent(comboxGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbNombre)
-                            .addComponent(lbClasificacion))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtNombre)
-                            .addComponent(comboxClasificacion, 0, 200, Short.MAX_VALUE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbNombre)
+                                    .addComponent(lbClasificacion))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtNombre)
+                                    .addComponent(comboxClasificacion, 0, 200, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnEliminar)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnGuardar))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(txtcodbus, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                                        .addComponent(btnbuscar))))))
+                    .addComponent(rdbEspañol))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -162,23 +226,28 @@ public class VtnRegistroPeli extends javax.swing.JFrame {
                     .addComponent(txtDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbClasificacion)
                     .addComponent(comboxClasificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbGenero)
-                    .addComponent(comboxGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comboxGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtcodbus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnbuscar))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGuardar)
-                    .addComponent(btnEliminar)
                     .addComponent(lbIdioma)
                     .addComponent(rdbEspañol))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rdbIngles)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rdbIngles)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnEliminar)
+                        .addComponent(btnGuardar)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rdbFrances)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rdbPortugues)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addComponent(btnRegresar)
                 .addContainerGap())
         );
@@ -186,6 +255,92 @@ public class VtnRegistroPeli extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        
+        objPeli.setCodigo(txtCodigo.getText());
+        objPeli.setNombre(txtNombre.getText());
+        objPeli.setDuracion(txtDuracion.getText());
+        objPeli.setClasificacion(comboxClasificacion.getSelectedItem().toString());
+        objPeli.setGenero(comboxGenero.getSelectedItem().toString());
+        objPeli.setIdioma(rdbEspañol.getText());
+        objPeli.setIdioma(rdbFrances.getText());
+        objPeli.setIdioma(rdbIngles.getText());
+        objPeli.setIdioma(rdbPortugues.getText());
+        
+        pelBD.abrir();
+        pelBD.insertarRegistro(objPeli);
+        pelBD.cerrar();
+        
+        JOptionPane.showMessageDialog(this, "La pelicula se registró de forma correcta");
+
+        limpiarCampos();
+        
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void comboxClasificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboxClasificacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboxClasificacionActionPerformed
+
+    private void rdbFrancesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbFrancesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rdbFrancesActionPerformed
+
+    private void txtcodbusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcodbusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcodbusActionPerformed
+
+    private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
+        
+        pelBD.abrir();
+        objPeli = pelBD.consultarRegistro(txtCodigo.getText());
+        
+        if(objPeli != null){
+            JOptionPane.showMessageDialog(this, "La pelicula existe");
+            txtCodigo.setEditable(true);
+            txtDuracion.setEditable(true);
+            txtNombre.setEditable(true);
+            comboxClasificacion.setEditable(true);
+            comboxGenero.setEditable(true);
+          
+          
+        }else{
+            JOptionPane.showMessageDialog(this, "La pelicula no se encontró en la BD");
+        }
+        
+        pelBD.cerrar();
+        
+    }//GEN-LAST:event_btnbuscarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+       
+       pelBD.abrir();
+        objPeli = pelBD.consultarRegistro(txtCodigo.getText());
+        
+        if(objPeli != null){
+            
+            pelBD.eliminarRegistro(objPeli);
+        }else{
+                JOptionPane.showMessageDialog(this, "La pelicula a eliminar no existe en la BD");
+
+        }pelBD.cerrar(); 
+        
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        
+        limpiarCampos();
+        objPrin.setVisible(true);
+        this.setVisible(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
+     public void limpiarCampos(){
+        
+        txtCodigo.setText("");
+        txtDuracion.setText("");
+        txtNombre.setText("");
+        
+    }
     /**
      * @param args the command line arguments
      */
@@ -225,9 +380,11 @@ public class VtnRegistroPeli extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnRegresar;
+    private javax.swing.JButton btnbuscar;
     private javax.swing.ButtonGroup btngIdioma;
     private javax.swing.JComboBox<String> comboxClasificacion;
     private javax.swing.JComboBox<String> comboxGenero;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbClasificacion;
     private javax.swing.JLabel lbCodigo;
     private javax.swing.JLabel lbDuracion;
@@ -243,5 +400,6 @@ public class VtnRegistroPeli extends javax.swing.JFrame {
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtDuracion;
     private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtcodbus;
     // End of variables declaration//GEN-END:variables
 }
