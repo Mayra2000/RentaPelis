@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class VntInicio extends javax.swing.JFrame {
 
     PeliculaBD PeliculaBD = new PeliculaBD();
-    VtnRegistroPeli objRegistroPeli = null;
+    VtnRegistro objRegistro = null;
     
     public VntInicio() {
 
@@ -50,9 +50,9 @@ public class VntInicio extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         tableFunciones = new javax.swing.JTable();
         btnCerrarSesion = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        MenuGeneral = new javax.swing.JMenuBar();
+        mnRegistroEmpleado = new javax.swing.JMenu();
+        mnRegistroPeliculas = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Inicio");
@@ -89,18 +89,23 @@ public class VntInicio extends javax.swing.JFrame {
 
         btnCerrarSesion.setText("Cerrar Sesion");
 
-        jMenu1.setText("Registro Empleados");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Registros Peliculas");
-        jMenu2.addActionListener(new java.awt.event.ActionListener() {
+        mnRegistroEmpleado.setText("Registro Empleados");
+        mnRegistroEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu2ActionPerformed(evt);
+                mnRegistroEmpleadoActionPerformed(evt);
             }
         });
-        jMenuBar1.add(jMenu2);
+        MenuGeneral.add(mnRegistroEmpleado);
 
-        setJMenuBar(jMenuBar1);
+        mnRegistroPeliculas.setText("Registros Peliculas");
+        mnRegistroPeliculas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnRegistroPeliculasActionPerformed(evt);
+            }
+        });
+        MenuGeneral.add(mnRegistroPeliculas);
+
+        setJMenuBar(MenuGeneral);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -141,9 +146,19 @@ public class VntInicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+    private void mnRegistroPeliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnRegistroPeliculasActionPerformed
+        if (objRegistro == null)
+            objRegistro = new Vnt(this, objAl);
         
-    }//GEN-LAST:event_jMenu2ActionPerformed
+        objVntAl.setVisible(true);
+        
+        //Ocultar la ventana Principal
+        this.setVisible(false);
+    }//GEN-LAST:event_mnRegistroPeliculasActionPerformed
+
+    private void mnRegistroEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnRegistroEmpleadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnRegistroEmpleadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,14 +196,14 @@ public class VntInicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuBar MenuGeneral;
     private javax.swing.JButton btnCerrarSesion;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lbFunRegistradas;
     private javax.swing.JLabel lbPeliRegistradas;
+    private javax.swing.JMenu mnRegistroEmpleado;
+    private javax.swing.JMenu mnRegistroPeliculas;
     private javax.swing.JTable tableFunciones;
     private javax.swing.JTable tablePeliculas;
     // End of variables declaration//GEN-END:variables
